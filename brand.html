@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>هوية إقرأ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .bw { max-width: 980px; margin-inline: auto; padding-block: 32px 56px; display: grid; gap: 40px; }
+  .bw > * { min-width: 0; }
+  .bw h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 900; }
+  .bw h2 { font-size: 1.3rem; margin-bottom: 14px; }
+  .bw p { color: var(--muted); max-width: 64ch; }
+  .lock { display: inline-flex; align-items: center; gap: 14px; }
+  .lock img { width: 64px; height: 64px; }
+  .lock b { font-family: var(--f-display); font-weight: 900; font-size: 3rem; line-height: 1; color: var(--fg); }
+  .lock small { display: block; font-size: .85rem; color: var(--muted); letter-spacing: .03em; margin-top: 4px; }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .panel { border-radius: 14px; padding: 28px 20px; display: grid; place-items: center; min-height: 150px; border: 1px solid var(--line); }
+  .panel.light { background: #f6f3ec; color: #14213d; }
+  .panel.navy { background: #14213d; color: #f6f3ec; }
+  .panel.amber { background: #e3a14a; color: #14213d; }
+  .panel b { font-family: var(--f-display); font-weight: 900; font-size: 2.2rem; line-height: 1; }
+  .panel .lock img { width: 48px; height: 48px; }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .chipc { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+  .chipc i { display: block; height: 76px; }
+  .chipc div { padding: 10px 12px; font-size: .88rem; display: grid; gap: 2px; }
+  .chipc code { direction: ltr; text-align: right; font-size: .82rem; color: var(--muted); }
+  .type { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .type > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .type .big { font-size: 2.4rem; line-height: 1.2; }
+  .space { display: grid; place-items: center; padding: 28px; background: var(--surface-2); border-radius: 14px; }
+  .space .box { outline: 1px dashed var(--amber); outline-offset: 16px; margin: 16px; }
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .rules ul { margin: 0; padding-inline-start: 1.2em; color: var(--muted); }
+  .rules li { margin-bottom: 6px; }
+  .rules h3 { margin-bottom: 8px; }
+  .back { color: var(--amber); font-weight: 600; text-decoration: none; }
+  .tiny { display: flex; gap: 18px; align-items: end; }
+</style>
+</head>
+<body>
+<main class="bw">
+  <a class="back" href="index.html">← العودة إلى المتجر</a>
+  <header>
+    <p style="color:var(--amber);font-weight:700;margin-bottom:8px">دليل الهوية البصرية</p>
+    <div class="lock"><img src="logo-mark.svg" alt=""><span><b>إقرأ</b><small>متجر ومكتبة</small></span></div>
+    <p style="margin-top:18px">الاسم من أول كلمة نزلت في القراءة. العلامة كتاب مفتوح يخرج من كعبه حرف الألف، فتجمع الاسم والمنتج في شكل واحد. المربع الكحلي يجعلها تعمل أيقونة تطبيق وصورة حساب.</p>
+  </header>
+
+  <section>
+    <h2>الشعار على الخلفيات</h2>
+    <div class="panels">
+      <div class="panel light"><span class="lock"><img src="logo-mark.svg" alt=""><span><b style="color:#14213d">إقرأ</b></span></span></div>
+      <div class="panel navy"><span class="lock"><img src="logo-mark.svg" alt=""><span><b style="color:#f6f3ec">إقرأ</b></span></span></div>
+      <div class="panel amber"><span class="lock"><img src="logo-mark.svg" alt=""><span><b style="color:#14213d">إقرأ</b></span></span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>العلامة وحدها</h2>
+    <div class="tiny">
+      <img src="logo-mark.svg" width="128" height="128" alt="العلامة بحجم 128">
+      <img src="logo-mark.svg" width="64" height="64" alt="العلامة بحجم 64">
+      <img src="logo-mark.svg" width="32" height="32" alt="العلامة بحجم 32">
+      <img src="logo-mark.svg" width="20" height="20" alt="العلامة بحجم 20">
+    </div>
+    <p style="margin-top:12px">أصغر حجم مناسب للعلامة 20 بكسل. ملف العلامة محفوظ باسم <code dir="ltr">logo-mark.svg</code>.</p>
+  </section>
+
+  <section>
+    <h2>الألوان</h2>
+    <div class="sw">
+      <div class="chipc"><i style="background:#14213d"></i><div><b>كحلي عميق</b><code>#14213d</code><span>الخلفيات والنصوص</span></div></div>
+      <div class="chipc"><i style="background:#e3a14a"></i><div><b>عنبر</b><code>#e3a14a</code><span>الألف والتمييز</span></div></div>
+      <div class="chipc"><i style="background:#9a5f10"></i><div><b>عنبر غامق</b><code>#9a5f10</code><span>الأزرار على الفاتح</span></div></div>
+      <div class="chipc"><i style="background:#f3e2c2"></i><div><b>رملي</b><code>#f3e2c2</code><span>صفحات الكتاب</span></div></div>
+      <div class="chipc"><i style="background:#f6f3ec"></i><div><b>ورق</b><code>#f6f3ec</code><span>خلفية الوضع الفاتح</span></div></div>
+      <div class="chipc"><i style="background:#0d1424"></i><div><b>ليل</b><code>#0d1424</code><span>خلفية الوضع الداكن</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>الخطوط</h2>
+    <div class="type">
+      <div><p>العناوين والشعار</p><div class="big" style="font-family:var(--f-display);font-weight:900;color:var(--fg)">Cairo 900</div><p style="margin-top:6px">اقرأ، وأنت تتنفس الكلمات.</p></div>
+      <div><p>النصوص الطويلة والقارئ</p><div class="big" style="font-family:var(--f-body);color:var(--fg)">IBM Plex Sans Arabic</div><p style="margin-top:6px">خط مريح للقراءة الطويلة على الشاشات الصغيرة.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>المساحة المحيطة</h2>
+    <div class="space"><div class="box"><span class="lock"><img src="logo-mark.svg" alt=""><span><b>إقرأ</b></span></span></div></div>
+    <p style="margin-top:12px">اترك حول الشعار مساحة فارغة لا تقل عن عرض الألف في العلامة، ولا تضع نصاً أو صورة داخلها.</p>
+  </section>
+
+  <section class="rules">
+    <div><h3>افعل</h3><ul><li>استخدم الشعار بألوانه الأصلية.</li><li>اكتب الاسم بكسر الهمزة: إقرأ.</li><li>استخدم العلامة وحدها عند ضيق المساحة.</li></ul></div>
+    <div><h3>لا تفعل</h3><ul><li>لا تغيّر ألوان العلامة أو تدوّرها.</li><li>لا تمطّ الشعار أو تضف ظلالاً له.</li><li>لا تضعه على خلفية مزدحمة بالصور.</li></ul></div>
+  </section>
+</main>
+</body>
+</html>

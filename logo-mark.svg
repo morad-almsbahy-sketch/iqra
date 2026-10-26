@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="شعار إقرأ">
+  <rect width="64" height="64" rx="15" fill="#14213d"/>
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#e3a14a" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M32 50 C25 45.5 16 45 9.5 47 V26 C16 24 25 24.5 32 29 Z" fill="#f3e2c2"/>
+  <path d="M32 50 C39 45.5 48 45 54.5 47 V26 C48 24 39 24.5 32 29 Z" fill="#f3e2c2" fill-opacity=".78"/>
+  <rect x="29.75" y="9" width="4.5" height="32" rx="2.25" fill="#e3a14a"/>
+  <circle cx="45" cy="14" r="3" fill="#e3a14a" fill-opacity=".55"/>
+</svg>

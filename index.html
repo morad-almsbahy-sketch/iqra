@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إقرأ</title>
+<meta name="description" content="إقرأ: متجر ومكتبة كتب عربية وعالمية. اقرأ عينة بصفحات تُقلب، وتتبّع قراءتك في «كتبي»، واطلب ما يعجبك.">
+<meta property="og:title" content="إقرأ">
+<meta property="og:description" content="متجر ومكتبة كتب مع قارئ تفاعلي بتقليب الصفحات.">
+<meta name="theme-color" content="#14213d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div id="app" dir="rtl" lang="ar">
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="#" data-nav="home" aria-label="إقرأ">
+        <img class="brand-mark" src="logo-mark.svg" width="34" height="34" alt="">
+        <span class="brand-name">إقرأ</span>
+      </a>
+      <nav class="tabs" aria-label="التنقل">
+        <button class="tab is-active" data-nav="home" id="tab-home">المتجر</button>
+        <button class="tab" data-nav="library" id="tab-library">كتبي <span class="count" id="lib-count" hidden>0</span></button>
+      </nav>
+      <div class="actions">
+        <button class="icon-btn" id="theme-btn" aria-label="تبديل الوضع الداكن"></button>
+        <button class="icon-btn cart-btn" id="cart-btn" aria-label="سلة الشراء"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="view-home">
+      <div class="wrap hero">
+        <div class="hero-text">
+          <p class="eyebrow">متجر ومكتبة قراءة</p>
+          <h1>اقرأ الصفحات الأولى،<br>ثم اختر كتابك</h1>
+          <p class="lead">اقرأ عينة من أي كتاب بصفحات تُقلب بين يديك، ثم أضف ما أعجبك إلى السلة أو إلى «كتبي» لتتابع قراءتك.</p>
+        </div>
+        <div class="hero-stack" id="hero-stack" role="group" aria-label="كتب مختارة"></div>
+      </div>
+
+      <div class="wrap controls">
+        <label class="search" for="search">
+          <span id="search-ico"></span>
+          <input id="search" type="search" placeholder="ابحث باسم الكتاب أو المؤلف" autocomplete="off">
+        </label>
+        <div class="sort">
+          <label for="sort">الفرز</label>
+          <select id="sort">
+            <option value="sales">الأكثر مبيعاً</option>
+            <option value="rating">الأعلى تقييماً</option>
+            <option value="new">الأحدث</option>
+          </select>
+        </div>
+      </div>
+      <div class="wrap chips" id="chips" role="group" aria-label="التصنيفات"></div>
+
+      <div class="wrap">
+        <p class="result-note" id="result-note"></p>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p>لا توجد كتب تطابق بحثك.</p>
+          <button class="btn ghost" id="reset-filters">إعادة ضبط الفلاتر</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-library" hidden>
+      <div class="wrap">
+        <h2 class="page-title">كتبي</h2>
+        <div id="shelf-stats" class="shelf-stats"></div>
+        <div class="lib-tabs" role="tablist" id="lib-tabs">
+          <button role="tab" class="lib-tab is-active" data-lib="reading">أقرأه الآن</button>
+          <button role="tab" class="lib-tab" data-lib="want">أريد قراءته</button>
+          <button role="tab" class="lib-tab" data-lib="done">قرأته</button>
+          <button role="tab" class="lib-tab" data-lib="fav">المفضلة</button>
+          <button role="tab" class="lib-tab" data-lib="orders">طلباتي</button>
+        </div>
+        <div class="grid" id="lib-grid"></div>
+        <div class="empty" id="lib-empty" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><img class="brand-mark" src="logo-mark.svg" width="34" height="34" alt=""><span class="brand-name">إقرأ</span></div>
+        <p>متجر ومكتبة كتب. اقرأ عينة قبل الشراء، وأبقِ كتبك مرتبة في مكان واحد.</p>
+        <p class="foot-phone">للتواصل: <a href="tel:+966564146686" dir="ltr">0564146686</a></p>
+      </div>
+      <nav aria-label="روابط المتجر">
+        <h3>المتجر</h3>
+        <ul>
+          <li><a href="#" data-nav="home">كل الكتب</a></li>
+          <li><a href="#" data-nav="library">كتبي</a></li>
+          <li><a href="#" data-nav="library" data-libgo="orders">طلباتي</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="المساعدة">
+        <h3>المساعدة</h3>
+        <ul>
+          <li><a href="#" data-info="faq">الأسئلة الشائعة</a></li>
+          <li><a href="#" data-info="policy">الشحن والإرجاع</a></li>
+          <li><a href="#" data-info="contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="عن إقرأ">
+        <h3>عن إقرأ</h3>
+        <ul>
+          <li><a href="#" data-info="about">من نحن</a></li>
+          <li><a href="brand.html" target="_blank" rel="noopener">دليل الهوية</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap foot-note">
+      <p>متجر تجريبي يعمل بالكامل في متصفحك. الطلبات وتقدّم القراءة تُحفظ على جهازك فقط، ولا يُرسل شيء إلى أي خادم. جميع الأسعار بالريال السعودي.</p>
+    </div>
+  </footer>
+
+  <!-- Info pages -->
+  <div class="overlay" id="info-ov" hidden>
+    <div class="modal info" role="dialog" aria-modal="true" aria-labelledby="info-h">
+      <div class="modal-head"><h2 id="info-h"></h2><button class="icon-btn" id="info-close" aria-label="إغلاق"></button></div>
+      <div class="info-body" id="info-body"></div>
+    </div>
+  </div>
+
+  <!-- Book detail modal -->
+  <div class="overlay" id="detail-ov" hidden>
+    <div class="modal detail" role="dialog" aria-modal="true" aria-labelledby="d-title" id="detail"></div>
+  </div>
+
+  <!-- Reader -->
+  <div class="reader" id="reader" hidden role="dialog" aria-modal="true" aria-label="قارئ الكتاب">
+    <div class="r-bar">
+      <button class="icon-btn" id="r-close" aria-label="إغلاق القارئ"></button>
+      <div class="r-title"><strong id="r-name"></strong><span id="r-author"></span></div>
+      <div class="r-tools">
+        <button class="icon-btn" id="r-mark" aria-label="إشارة مرجعية" aria-pressed="false"></button>
+        <button class="icon-btn" id="r-theme" aria-label="لون الورق"></button>
+        <button class="icon-btn" id="r-toc" aria-label="الفهرس والإشارات"></button>
+        <button class="icon-btn" id="r-zout" aria-label="تصغير النص"></button>
+        <button class="icon-btn" id="r-zin" aria-label="تكبير النص"></button>
+        <button class="icon-btn" id="r-full" aria-label="ملء الشاشة"></button>
+      </div>
+    </div>
+    <div class="r-stage" id="r-stage">
+      <button class="nav-arrow right" id="r-prev" aria-label="الصفحة السابقة"></button>
+      <div class="book" id="book"></div>
+      <button class="nav-arrow left" id="r-next" aria-label="الصفحة التالية"></button>
+    </div>
+    <div class="r-foot">
+      <span id="r-pos">1 / 1</span>
+      <input type="range" id="r-range" min="1" max="1" value="1" aria-label="الانتقال إلى صفحة">
+      <form id="r-go" class="go">
+        <label for="r-page-in" class="sr">رقم الصفحة</label>
+        <input id="r-page-in" type="number" min="1" inputmode="numeric" placeholder="صفحة">
+        <button class="btn small" type="submit">اذهب</button>
+      </form>
+      <button class="btn small ghost" id="r-finish">أضفه إلى كتبي</button>
+    </div>
+    <div class="toc" id="toc" hidden>
+      <h3>الفهرس</h3>
+      <ol id="toc-list"></ol>
+      <h3 class="marks-h">إشاراتي</h3>
+      <ul id="marks-list" class="marks"></ul>
+    </div>
+  </div>
+
+  <!-- Cart slide-over -->
+  <div class="overlay side" id="cart-ov" hidden>
+    <aside class="cart" role="dialog" aria-modal="true" aria-labelledby="cart-h">
+      <div class="cart-head">
+        <h2 id="cart-h">سلة الشراء</h2>
+        <button class="icon-btn" id="cart-close" aria-label="إغلاق السلة"></button>
+      </div>
+      <div class="cart-body" id="cart-body"></div>
+      <div class="cart-foot" id="cart-foot"></div>
+    </aside>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="overlay" id="co-ov" hidden>
+    <div class="modal checkout" role="dialog" aria-modal="true" aria-labelledby="co-h">
+      <div class="modal-head">
+        <h2 id="co-h">بيانات الشحن</h2>
+        <button class="icon-btn" id="co-close" aria-label="إغلاق"></button>
+      </div>
+      <form id="co-form" novalidate>
+        <div class="fields">
+          <div class="field"><label for="f-name">الاسم الكامل</label><input id="f-name" name="name" required autocomplete="name"><small class="err"></small></div>
+          <div class="field"><label for="f-phone">رقم الجوال</label><input id="f-phone" name="phone" required inputmode="tel" dir="ltr" placeholder="05XXXXXXXX" autocomplete="tel"><small class="err"></small></div>
+          <div class="field"><label for="f-city">المدينة</label><input id="f-city" name="city" required autocomplete="address-level2"><small class="err"></small></div>
+          <div class="field"><label for="f-district">الحي</label><input id="f-district" name="district" required><small class="err"></small></div>
+          <div class="field wide"><label for="f-addr">العنوان التفصيلي</label><input id="f-addr" name="addr" required autocomplete="street-address"><small class="err"></small></div>
+        </div>
+        <div class="co-sum" id="co-sum"></div>
+        <button class="btn primary block" type="submit">تأكيد الطلب</button>
+        <p class="fine">هذا طلب تجريبي. لن يتم أي دفع أو شحن فعلي.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="core.js"></script>
+<script src="shop.js"></script>
+<script src="reader.js"></script>
+<script src="shelf.js"></script>
+<script src="pages.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
